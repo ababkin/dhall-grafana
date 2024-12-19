@@ -92,4 +92,8 @@
 , YAxis = ./types/YAxis.dhall // { default = ./defaults/YAxis.dhall }
 , LuceneBucketSettings = ./schemas/LuceneBucketSettings.dhall
 , LuceneTarget = ./schemas/LuceneTarget.dhall
+, TimeseriesPanel =
+  { default = ./defaults/TimeseriesPanel.dhall
+  , Type = (./types/TimeseriesPanel.dhall).Type
+  }
 }
