@@ -1,4 +1,5 @@
 let TimeseriesPanel = ../types/TimeseriesPanel.dhall
+let Transformations = ../types/Transformations.dhall
 
 let MetricTargets = ../types/MetricTargets.dhall
 
@@ -17,4 +18,5 @@ in  { type = TimeseriesPanel.PanelType.timeseries
     , timeShift = None Text
     , hideTimeOverride = False
     , fieldConfig = None (../types/FieldConfig.dhall).Type
+    , transformations = [] : List Transformations.Types
     } 

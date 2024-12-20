@@ -6,7 +6,9 @@ let ColorMode = < fixed | thresholds | absolute | percentage >
 
 let MatcherID = < byName >
 
-let MatcherOption = < status >
+let MatcherOption = Text -- < status | warn | error >
+
+let MapValue = < Text : Text | MapEntry : List { mapKey : Text, mapValue : Text } >
 
 let Defaults =
       { color : { fixedColor : Text, mode : ColorMode }
@@ -21,7 +23,7 @@ let Defaults =
 
 let Override =
       { matcher : { id : MatcherID, options : MatcherOption }
-      , properties : List (Prelude.Map.Type Text Text)
+      , properties : List (Prelude.Map.Type Text MapValue)
       }
 
 let FieldConfig = { defaults : Optional Defaults, overrides : List Override }
@@ -54,6 +56,7 @@ in  { Type = FieldConfig
     , ColorMode
     , MatcherID
     , MatcherOption
+    , MapValue
     , Defaults
     , Override
     , mkDefaults
